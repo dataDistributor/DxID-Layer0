@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "src/layer0-core",
+    "src/zk-verification",
+    "smart-contracts/identity"
+]

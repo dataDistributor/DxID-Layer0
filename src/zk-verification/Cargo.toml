@@ -1,0 +1,15 @@
+[package]
+name = "zk-verification"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sha2 = "0.10"
+
+[[bin]]
+name = "proof_demo"
+path = "src/bin/proof_demo.rs"
+
+[lib]
+name = "zk_verification"
+path = "src/lib.rs"

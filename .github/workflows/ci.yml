@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  rust:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project:
+          - "src/layer0-core"
+          - "src/zk-verification"
+          - "smart-contracts/identity"
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+
+      - name: Build project ${{ matrix.project }}
+        working-directory: ${{ matrix.project }}
+        run: cargo build --verbose
+
+      - name: Run tests for ${{ matrix.project }}
+        working-directory: ${{ matrix.project }}
+        run: cargo test --verbose
+
+  cpp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies for C++ dApp
+        run: sudo apt-get update && sudo apt-get install -y cmake g++ libcurl4-openssl-dev
+
+      - name: Build C++ dApp
+        working-directory: dapp-cpp
+        run: |
+          mkdir -p build
+          cd build
+          cmake ..
+          make
+
+      - name: Run C++ dApp tests
+        working-directory: dapp-cpp/build
+        run: ./dxid_dapp

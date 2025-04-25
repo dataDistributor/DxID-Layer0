@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/dxid_dapp.dir/src/main.cpp.o -o dxid_dapp  /usr/lib/x86_64-linux-gnu/libcurl.so 

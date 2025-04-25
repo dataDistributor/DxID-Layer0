@@ -43,4 +43,4 @@ Independently developed as an experimental foundation for decentralized identity
 ### 🌐 Repository
 https://github.com/dataDistributor/DxID-Layer0
 
-📄 [Read the full DxID Whitepaper (109 pages)](docs/Decentralized Identification (DxID) – Technical Specification & Whitepaper.pdf)
+📄 [Read the full DxID Whitepaper (109 pages)](./docs/Decentralized Identification (DxID) – Technical Specification & Whitepaper.pdf)

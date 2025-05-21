@@ -1,16 +1,15 @@
-# Rust build artifacts
+# Build artifacts
 /target/
 
 # Git data
 .git
 .gitignore
 
-# Dockerfiles, CI configs, editors
+# Editor settings
 .vscode/
-.github/
-docker-compose.yml
+.idea/
 
-# Local env
+# Env files
 .env
 
 # Logs

@@ -1,7 +1,17 @@
-target
+# Rust build artifacts
+/target/
+
+# Git data
 .git
 .gitignore
-.github
-.vscode
-.dockerignore
-Dockerfile
+
+# Dockerfiles, CI configs, editors
+.vscode/
+.github/
+docker-compose.yml
+
+# Local env
+.env
+
+# Logs
+*.log

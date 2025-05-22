@@ -257,8 +257,8 @@ async fn verify_quantum_proof_handler(req: VerifyQuantumProofRequest)
 #[tokio::main]
 async fn main() {
     // Open (or create) sled DB at "./ddxid_chain"
-    let blockchain = Blockchain::new("ddxid_chain");
-
+    let blockchain = Blockchain::new("/tmp/ddxid_chain");
+    
     let bc_filter = warp::any().map({
         let bc = blockchain.clone();
         move || bc.clone()
